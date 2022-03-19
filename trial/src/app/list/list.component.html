@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <span><strong>Name</strong></span>
+    <span><strong>Amount</strong></span>
+  </li>
+  <li class="list-group-item" *ngFor="let item of data; let i = index">
+    <span>{{item.name.first}} {{item.name.last}} </span>
+    <span>{{amountArr[i]}}</span>
+  </li>
+</ul>
+

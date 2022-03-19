@@ -1,1 +1,19 @@
+`<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/navigator']" [queryParams]="{tab: 0}" [routerLinkActive]="['active']" >Income</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/navigator']" [queryParams]="{tab: 1}" [routerLinkActive]="['active']">Outcome</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  [routerLink]="['/navigator']" [queryParams]="{tab: 2}" [routerLinkActive]="['active']">Loans</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  [routerLink]="['/navigator']" [queryParams]="{tab: 3}" [routerLinkActive]="['active']">Investments</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>`
+
 

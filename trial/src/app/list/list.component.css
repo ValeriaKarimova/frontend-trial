@@ -4,6 +4,12 @@
   border-bottom: 2px solid gray;
 }
 
+.list-group-item span {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+
 .list-group {
   padding: 10px;
 }

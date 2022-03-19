@@ -4,31 +4,25 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { Routes, RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
-import { IncomeComponent } from './income/income.component';
-import { OutcomeComponent } from './outcome/outcome.component';
-import { LoansComponent } from './loans/loans.component';
-import { InvestmentsComponent } from './investments/investments.component';
+import { ListComponent } from './list/list.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 
 const appRoutes: Routes = [
-  {path: '', component: IncomeComponent},
-  {path: 'outcome', component: OutcomeComponent},
-  {path: 'loans', component: LoansComponent},
-  {path: 'investments', component: InvestmentsComponent},
+  {path: '', component: ListComponent},
+  {path: 'navigator', component: ListComponent},
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    IncomeComponent,
-    OutcomeComponent,
-    LoansComponent,
-    InvestmentsComponent
+    ListComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
