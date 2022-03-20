@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  padding: 3rem 2rem;
+}
+
+.card {
+  margin: 20px 0px;
+}

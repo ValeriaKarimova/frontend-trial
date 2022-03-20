@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../interface';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {INFO, User} from '../../services';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router'
 
 @Component({
   selector: 'app-list',
@@ -9,19 +9,15 @@ import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 })
 
 export class ListComponent implements OnInit {
-  data: Array<User> = []
-  amountArr: Array<number> = []
-  fullData: Array<User> = []
+  data: Array<User> = [];
+  amountArr: Array<number> = [];
+  fullData: Array<User> = [];
   currentTab: string = '0';
-  info: Map<string, string> = new Map<string, string>();
+  info: Map<string, string> = INFO;
+  categories: Array<string> = ['income', 'outcome', 'loans', 'investments'];
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.info.set('0', 'income');
-    this.info.set('1', 'outcome');
-    this.info.set('2', 'loan');
-    this.info.set('3', 'investment');
-
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd && this.fullData !== []) {
         const tab = this.route.snapshot.queryParamMap.get('tab') as string;

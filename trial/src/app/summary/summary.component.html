@@ -1,0 +1,18 @@
+<header class="card-header">
+    <div class="card-body">
+      <h5 class="card-title">Welcome</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content</p>
+      <a [routerLink]="['/navigator']" [queryParams]="{tab: 0}" class="btn btn-primary">See transactions</a>
+    </div>
+  <h5>You have {{fullData.length}} transactions</h5>
+</header>
+<main class="main">
+  <div class="card" *ngFor="let card of cards" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{card.length}}</h5>
+      <p class="card-text">{{card.name}}</p>
+      <a [routerLink]="['/navigator']" [queryParams]="{tab: card.tabId}" class="btn btn-primary">See all</a>
+    </div>
+  </div>
+</main>
+
