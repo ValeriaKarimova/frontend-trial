@@ -18,8 +18,8 @@ export interface Card {
   tabId: number
 }
 
-export const INFO = new Map()
-INFO.set('0', 'income');
-INFO.set('1', 'outcome');
-INFO.set('2', 'loan');
-INFO.set('3', 'investment');
+export const TRANSACTIONS = new Map()
+TRANSACTIONS.set('0', 'income');
+TRANSACTIONS.set('1', 'outcome');
+TRANSACTIONS.set('2', 'loan');
+TRANSACTIONS.set('3', 'investment');

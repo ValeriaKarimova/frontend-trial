@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {INFO, User} from '../../services';
+import {TRANSACTIONS, User} from '../../services';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router'
 
 @Component({
@@ -12,8 +12,7 @@ export class ListComponent implements OnInit {
   data: Array<User> = [];
   amountArr: Array<number> = [];
   fullData: Array<User> = [];
-  currentTab: string = '0';
-  info: Map<string, string> = INFO;
+  transactions: Map<string, string> = TRANSACTIONS;
   categories: Array<string> = ['income', 'outcome', 'loans', 'investments'];
 
 
@@ -21,8 +20,7 @@ export class ListComponent implements OnInit {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd && this.fullData !== []) {
         const tab = this.route.snapshot.queryParamMap.get('tab') as string;
-        this.currentTab = tab;
-        this.fillArray()
+        this.fillArray(tab)
       }
     })
   }
@@ -39,8 +37,8 @@ export class ListComponent implements OnInit {
     this.fillArray()
   }
 
-  fillArray(): void {
-    const name = this.info.get(this.currentTab.toString());
+  fillArray(tab: string = '0'): void {
+    const name = this.transactions.get(tab.toString());
     this.data = this.fullData.filter((info: User) => info.type === name);
     while (this.amountArr.length < this.data.length) {
       this.amountArr.push(this.getRandomAmount())

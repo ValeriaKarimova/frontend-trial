@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Card, INFO, User} from '../../services';
+import {Card, TRANSACTIONS, User} from '../../services';
 
 @Component({
   selector: 'app-summary',
@@ -9,7 +9,7 @@ import {Card, INFO, User} from '../../services';
 export class SummaryComponent implements OnInit {
   fullData: Array<User> = [];
   cards: Array<Card> = [];
-  info: Map<string, string> = INFO;
+  transactions: Map<string, string> = TRANSACTIONS;
 
   constructor() { }
 
@@ -25,8 +25,8 @@ export class SummaryComponent implements OnInit {
   }
 
   fillArray() {
-    for (let i = 0; i < this.info.size; i++) {
-      const value: string| undefined = this.info.get(String(i));
+    for (let i = 0; i < this.transactions.size; i++) {
+      const value: string| undefined = this.transactions.get(String(i));
       const card: Card = {
         length: this.fullData.filter(item => item.type === value).length,
         name: value,
